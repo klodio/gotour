@@ -1,5 +1,3 @@
-exo 40
-
 package main
 
 import (

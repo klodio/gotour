@@ -1,5 +1,3 @@
-exo 43
-
 package main
 
 import "fmt"
@@ -7,24 +5,20 @@ import "fmt"
 // fibonacci is a function that returns
 // a function that returns an int.
 func fibonacci() func() int {
-    current,before2,before:=0,0,0;
+    current,before:=0,0;
     return func() int {
-        if before2 == 0 && before == 0 && current == 0 {
-     		current=1
+        if before == 0 && current == 0 { 
+        	current=1
             return 0
         }
-        before2=before;
-        before=current;
-        current=before+before2;
-    	return before;
-    }
+        current,before = current+before,current
+      return before;
+    }   
 }
 
 func main() {
     f := fibonacci()
-    for i := 0; i < 10; i++ {
+    for i := 0; i < 11; i++ {
         fmt.Println(f())
-    }
+    }   
 }
-
-

@@ -1,5 +1,3 @@
-exo 35
-
 package main
 
 import "code.google.com/p/go-tour/pic"
